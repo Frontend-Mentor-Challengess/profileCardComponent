@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+// *variables*
+$dark-cyan: #19a2ae;
+$desat-blue: #2d3248;
+$gray-blue: #6a6f81;
+$dark-gray: #969696;
+
+$weight400: 400;
+$weight700: 700;
+
+// *css reset*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "YOPQ" 300;
+  background-color: $dark-cyan;
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-position: top 0% left 0%, bottom 0% right 0%;
+  background-repeat: no-repeat;
+  background-size: 500px 500px, 500px 500px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  main {
+    background-color: white;
+    // width: max-content;
+    width: 35vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    .picture {
+      flex-basis: 25%;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px 14px 0 0;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 14px 14px 0 0;
+      }
+    }
+    .content {
+      flex-basis: 75%;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      .name {
+        margin: 14% 0 0 0;
+        color: $desat-blue;
+        font-weight: $weight700;
+
+        &::before {
+          content: "";
+          background-image: url(./images/image-victor.jpg);
+          background-size: cover;
+          background-position: center;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          border: 5px solid white;
+          position: absolute;
+          top: -60px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        span {
+          color: $gray-blue;
+          font-weight: $weight400;
+        }
+      }
+      .london {
+        margin: 1.5% 0 5% 0;
+        color: $dark-gray;
+        font-weight: $weight400;
+      }
+      hr {
+        width: 100%;
+        border: 0.00005px solid $dark-gray;
+      }
+      section {
+        padding: 5vh 4vw;
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+        .ks {
+          color: $desat-blue;
+          font-weight: $weight700;
+        }
+        .like-share {
+          color: $dark-gray;
+          font-weight: $weight400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    background-size: 170px 170px, 170px 170px;
+    background-position: top -8% left -20%, bottom 0% right -20%;
+    main {
+      width: 90vw;
+      .content {
+        .name {
+          margin-top: 20%;
+        }
+        section {
+          padding: 2vh 8vw;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  body {
+    background-size: 100px 100px, 100px 100px;
+    background-position: top 0% left 0%, bottom 0% right 0%;
+    main {
+      width: 50vw;
+      .content {
+        .name {
+          margin-top: 20%;
+        }
+        section {
+          padding: 8vh 6vw;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body{
+    main{
+      width: 40vw;
+      .content{
+        .name{
+          margin-top: 20%;
+        }
+        section{
+          padding: 3vh 5vw;
+        }
+      }
+    }
+  }
+}
